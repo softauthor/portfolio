@@ -1,0 +1,76 @@
+body {
+	font:$main-font;
+	background: $lightgrey;   
+}
+
+// This will take care of all the comman heading styles
+
+
+strong {
+	font-weight: $bold; 
+}
+
+
+
+/* Changing Susy default global settings */
+$susy: (
+  /* Tells Susy to use 12 columns */
+  columns: 12,
+  /* Tells Susy that the container has a max-width of 1120px */
+  container: 1600px,
+  /* Tells Susy to use border-box */
+  global-box-sizing: border-box 
+ );
+
+
+// HEADINGS
+
+#{headings()} {
+	color:$black;
+	font:$head-font;
+	text-align:center;
+}
+
+
+h2 {
+	
+	font-size: 3em;
+	font-weight:$extrathin;
+	text-transform:uppercase;
+}
+
+
+h3 {
+	font-weight:$bold;
+	font-size: 2em;
+}
+
+
+// PARAGRAPH
+
+p {
+	font-weight:$normal;
+	text-align:center;
+	margin:5px;
+	color:white;
+	font-size:1.2em;
+		
+}
+
+// A
+
+a {
+	text-align:center;
+}
+
+
+// PARAGRAPH
+small {
+	
+	text-align:center;
+	font-size:.7em;
+	padding:0 10px;
+	font-weight:$bold;
+	@include border-radius(10px);
+	
+}

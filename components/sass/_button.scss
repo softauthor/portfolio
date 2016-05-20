@@ -1,0 +1,41 @@
+.btn  {
+	-webkit-appearance:none;
+	font-size:17px;
+	border:none;
+	outline:none;
+	display:inline-block;
+	margin:0 auto;
+	padding:0 10px;
+	text-decoration:none;
+	height:40px;
+	line-height:38px;
+	letter-spacing:1px;
+	margin-top:20px;
+	margin-bottom:20px;
+	cursor:pointer;
+	font-weight:$thin;
+	margin-right:10px;
+	@include border-radius(10px);
+}
+
+
+
+.btn-cholapalace {
+	background: $cpred; 
+	// border-color:darken($cp-bg, 20%);
+	color:lighten($cp-bg, 20%);
+	border-bottom:2px solid darken($cpred, 20%);
+}
+
+.btn-softauthor {
+	background: darken($sagreen, 30%);; 
+	// border-color:darken($cp-bg, 20%);
+	color:rgba(white, .8);
+	border-bottom:2px solid darken($sagreen, 40%);
+	
+}
+
+
+.btn:hover {
+	opacity:0.8;
+}

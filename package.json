@@ -1,0 +1,19 @@
+{
+  "name": "portfolio",
+  "version": "0.0.1",
+  "description": "Rajarajan Thangarasu's Portfolio",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rajarajan Thangarasu",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-compass": "^2.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^3.2.2",
+    "gulp-util": "^3.0.7"
+  }
+}

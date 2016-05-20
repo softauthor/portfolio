@@ -1,0 +1,256 @@
+/*---------------
+ COMPASS & SUSY
+ ---------------*/
+@import url(https://fonts.googleapis.com/css?family=Exo+2:400,300,600,200,700);
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/*---------------
+ VARIABLES 
+ ---------------*/
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*---------------
+ BASE 
+ ---------------*/
+body {
+  font: 300 1em/1.5em "Exo 2", Helvetica, Arial, sans-serif;
+  background: #cccccc;
+}
+
+strong {
+  font-weight: 600;
+}
+
+/* Changing Susy default global settings */
+h1, h2, h3, h4, h5, h6 {
+  color: #111;
+  font: 300 1.5em/1.5em "Exo 2", Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
+h2 {
+  font-size: 3em;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 2em;
+}
+
+p {
+  font-weight: 400;
+  text-align: center;
+  margin: 5px;
+  color: white;
+  font-size: 1.2em;
+}
+
+a {
+  text-align: center;
+}
+
+small {
+  text-align: center;
+  font-size: .7em;
+  padding: 0 10px;
+  font-weight: 600;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/*---------------
+COMPONENTS 
+---------------*/
+.showcase {
+  height: 600px;
+  display: block;
+}
+.showcase section {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.showcase section:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.showcase section .showcase__img {
+  height: 600px;
+}
+.showcase section .showcase__info {
+  display: table;
+  height: 600px;
+}
+.showcase section .showcase__info__block {
+  display: inline-block;
+  display: table-cell;
+  vertical-align: middle;
+}
+.showcase:before, .showcase:after {
+  content: '';
+  display: table;
+}
+.showcase:after {
+  clear: both;
+}
+
+.showcase--cp {
+  background: #f8edbc;
+}
+.showcase--cp .showcase__img {
+  width: 57.62712%;
+  float: left;
+  margin-right: 1.69492%;
+  background: url("../img/cp-view.png") no-repeat;
+  background-size: 100%;
+  background-position: 0 60px;
+}
+.showcase--cp .showcase__info {
+  width: 40.67797%;
+  float: right;
+  margin-right: 0;
+}
+.showcase--cp .showcase__info h2 {
+  color: rgba(77, 39, 17, 0.5);
+}
+.showcase--cp .showcase__info h3 {
+  color: rgba(77, 39, 17, 0.9);
+}
+.showcase--cp .showcase__info p {
+  color: rgba(77, 39, 17, 0.9);
+}
+.showcase--cp small {
+  background: rgba(77, 39, 17, 0.2);
+}
+
+.showcase--sa {
+  background: #54ba7c;
+}
+.showcase--sa .showcase__img {
+  width: 57.62712%;
+  float: right;
+  margin-right: 0;
+  background: url("../img/sa-view.png") no-repeat;
+  background-size: 100%;
+  background-position: 0 60px;
+}
+.showcase--sa .showcase__info {
+  width: 40.67797%;
+  float: right;
+  margin-right: 0;
+}
+.showcase--sa .showcase__info h2 {
+  color: rgba(237, 232, 203, 0.8);
+}
+.showcase--sa .showcase__info h3 {
+  color: #132f1e;
+}
+.showcase--sa .showcase__info p {
+  color: #132f1e;
+}
+.showcase--sa small {
+  background: rgba(77, 39, 17, 0.2);
+}
+
+.btn {
+  -webkit-appearance: none;
+  font-size: 17px;
+  border: none;
+  outline: none;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0 10px;
+  text-decoration: none;
+  height: 40px;
+  line-height: 38px;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-weight: 300;
+  margin-right: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.btn-cholapalace {
+  background: #a31627;
+  color: white;
+  border-bottom: 2px solid #490a11;
+}
+
+.btn-softauthor {
+  background: #225335;
+  color: rgba(255, 255, 255, 0.8);
+  border-bottom: 2px solid #132f1e;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}

@@ -1,0 +1,121 @@
+// --------------------------------
+// INHERITANCE
+// --------------------------------
+
+// --------------------------------
+// MIXINS
+// --------------------------------
+@mixin showcaseimg( $img, $susyspan) {
+	@include span($susyspan);
+	background:$img no-repeat;
+	background-size:100%;
+	background-position: 0 60px;
+}
+
+// --------------------------------
+// SHOWCASE BLOCK
+// --------------------------------
+.showcase {
+	
+	height:600px;
+	display:block;
+	
+	section {
+
+		width:100%;
+		max-width:1600px;
+		margin:0 auto;
+		// susy 
+		@include container;
+		
+		
+		.showcase__img {
+			height:600px;
+		} //.showcase-img
+
+		.showcase__info {
+			display:table;
+			height:600px;
+		
+			&__block {
+				display:inline-block;
+				display:table-cell;
+				vertical-align:middle;
+			} //.showcase__info__block
+			
+		} //.showcase__info
+		
+	} //section
+
+	@include clearfix;
+
+} //.showcase
+
+
+
+// --------------------------------
+// SHOWCASE BLOCK MODIFIER
+// --------------------------------
+.showcase--cp {
+	background: $cp-bg;
+	
+	.showcase__img {
+		@include showcaseimg( url('../img/cp-view.png'), 7);
+	}
+
+	.showcase__info {
+		@include span(5 last);
+		
+		h2 {
+			color:rgba($cpchocolate, 0.5);
+		}
+
+		h3 {
+			color:rgba($cpchocolate, 0.9);
+		}
+
+		p {
+			color:rgba($cpchocolate, 0.9);
+		}
+	}
+
+	small {
+		background:rgba($cpchocolate, 0.2);
+	}
+
+	
+}
+
+
+
+.showcase--sa {
+	background:$sa-bg;
+	
+	.showcase__img {
+		@include showcaseimg( url('../img/sa-view.png'), 7 last);
+	}
+
+	.showcase__info {
+		@include span(5 last);
+		
+		h2 {
+			color:rgba($sabeige, .8);
+		}
+
+		h3 {
+			color:darken($sagreen, 40%);
+		}
+
+		p {
+			color:darken($sagreen, 40%);
+		}
+	}
+
+	small {
+		background:rgba($cpchocolate, 0.2);
+	}
+}
+
+
+
+
