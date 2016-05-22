@@ -1,8 +1,6 @@
 var gulp = require("gulp");
-
 var gutil = require("gulp-util");
 var connect = require('gulp-connect');
-
 
 // CONCAT
 var browserify = require('gulp-browserify');
@@ -13,7 +11,7 @@ var compass = require('gulp-compass');
 var sassSources = ['components/sass/style.scss'];
 
 
-var jsSources = ["components/scripts/nav.js", "components/scripts/banner.js", "components/scripts/body.js"];
+var jsSources = ["components/scripts/nav.js"];
 var htmlSources = ['builds/development/*.html'];
  
 gulp.task("js", function(){ 
@@ -33,7 +31,7 @@ gulp.task('compass', function() {
     .pipe(compass({
       sass: 'components/sass',
       image: 'builds/development/img',
-     require:['susy']
+     require:['susy', 'breakpoint']
     })
     .on('error', gutil.log))
     .pipe(gulp.dest('builds/development/css'))

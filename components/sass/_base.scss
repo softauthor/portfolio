@@ -1,18 +1,14 @@
 body {
 	font:$main-font;
-	background: $lightgrey;   
+	background: $white;  
+	text-align:center; // this helps to center inline-block in ul nav 
 }
 
-// This will take care of all the comman heading styles
+strong {font-weight: $bold;}
 
-
-strong {
-	font-weight: $bold; 
-}
-
-
-
-/* Changing Susy default global settings */
+// ---------------------
+// SUSY 
+// ---------------------
 $susy: (
   /* Tells Susy to use 12 columns */
   columns: 12,
@@ -23,7 +19,18 @@ $susy: (
  );
 
 
-// HEADINGS
+// ---------------------
+// BREAKPOINTS 
+// ---------------------
+$narrow 	: 400px;
+$small 		: 730px;
+$medium 	: 960px;
+$wide 		: 1200px;
+$extrawide 	: 1600px;
+
+// ---------------------
+// HEADINGS 
+// ---------------------
 
 #{headings()} {
 	color:$black;
@@ -31,10 +38,17 @@ $susy: (
 	text-align:center;
 }
 
+h1 {
+	
+	font-size: 2.7em;
+	font-weight:$bold;
+	color:#111;
+	line-height:45px;
+}
 
 h2 {
 	
-	font-size: 3em;
+	font-size: 2.5em;
 	font-weight:$extrathin;
 	text-transform:uppercase;
 }
@@ -45,32 +59,32 @@ h3 {
 	font-size: 2em;
 }
 
-
-// PARAGRAPH
-
+h4 {
+	font-size: 1.3em;
+	color:#666;
+	margin-top:10px;
+}
+// ---------------------
+// PARAGRAPH 
+// ---------------------
 p {
 	font-weight:$normal;
 	text-align:center;
 	margin:5px;
-	color:white;
-	font-size:1.2em;
-		
+	color:darken($lightgrey, 30%);
+	font-size:1.2em;		
 }
-
-// A
-
-a {
-	text-align:center;
-}
-
-
-// PARAGRAPH
+// ---------------------
+// ANCHOR 
+// ---------------------
+a {text-align:center;}
+// ---------------------
+// SMALL 
+// ---------------------
 small {
-	
 	text-align:center;
 	font-size:.7em;
 	padding:0 10px;
 	font-weight:$bold;
-	@include border-radius(10px);
-	
+	@include border-radius(10px);	
 }

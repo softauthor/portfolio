@@ -1,0 +1,62 @@
+.about {
+	
+	width:100%;
+	background:$black;
+	padding:20px 0;
+	display:none;
+	margin-top:20px;
+
+	.about--inner {
+		@include container(60%);
+		@include breakpoint(max-width $small) { @include container(95%);}
+		@include breakpoint($small $medium) {@include container(90%);}
+		@include breakpoint($medium $wide) {@include container(75%);}
+		@include breakpoint($wide $extrawide) {@include container(70%);}
+						
+		h4 {
+			text-align:left;
+			margin:0 auto;
+			margin-top:30px;
+			color:lighten($lightgrey, 30%);
+			font-weight:$normal;
+		}
+		
+		p {
+			font-size:1em;
+			font-weight:$extrathin;
+			color:lighten($black, 50%);
+			margin:5px auto;
+			text-align:left;
+			font-weight:$thin;
+
+			&:first-child {
+				color:lighten($black, 80%);
+				font-weight:$normal;
+				font-size:1em;
+				text-align:center;
+				letter-spacing:1px;
+				line-height:25px;
+			} //&first-child
+		} //p
+
+		.asa-dev {
+			h4 {color:$blue;}
+		} //.asa-dev
+
+		.asa-des {
+			h4 {color:$green;}
+		} //.asa-des
+
+		.about--workexperience {
+			@include span(6);
+			@include breakpoint(max-width $small) { @include span(12);}
+			p { margin-bottom:10px; }
+		} //about.workeperience
+
+		.about--education {
+			@include breakpoint(max-width $small) {@include span(12);}
+			@include span(6 last);
+			p {margin-bottom:10px;}
+		} //about.workeperience
+	} //about--inner
+} //about

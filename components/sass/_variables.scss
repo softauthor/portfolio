@@ -1,13 +1,17 @@
-
-//Import font
+// ---------------------
+// Font
+// ---------------------
 @import url(https://fonts.googleapis.com/css?family=Exo+2:400,300,600,200,700);
+
 // ------------------
-// Brand util colors
+// Colors
 // ------------------
 $black			: #111;
 $blue			: #66ccff;
 $green			: #66cc66;
 $lightgrey		: #cccccc;
+$orange 		:#9d4a22;
+$white 			:white;
 
 // cholapalace
 $cpgold			: #f8edbc;
@@ -17,25 +21,33 @@ $cpchocolate 	:#4d2711;
 // softauthor
 $sagreen        : #54ba7c;
 $sabeige		: #ede8cb;
-// ------------------
-// Primary Colors
-// ------------------
+
+// bulletship
+$bsred			:lighten(#ed2229, 10%);
+
+// samobile
+$samobileblue   :#51abac;
+
 
 // ------------------
-// Scondary Color
+// Primary colors
 // ------------------
 $sa-bg			:$sagreen; 
 $cp-bg			:$cpgold; 
+$bs-bg			:$bsred;
+$samobile-bg	:$samobileblue;
 
 
-// Fonts
+
+// ------------------
+// Font Modifiers
+// ------------------
 $font-family	: 'Exo 2', Helvetica, Arial, sans-serif;
 $extrathin		: 200;
 $thin			: 300;
 $normal			: 400;
 $bold			: 600;
 $heavy			: 700;
-
 
 $head-font		: $thin 1.5em/1.5em $font-family;
 $main-font		: $thin 1em/1.5em $font-family;

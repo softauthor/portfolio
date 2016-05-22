@@ -1,0 +1,44 @@
+nav {
+	border-top:1px dotted $lightgrey;
+	padding:20px 0;
+	
+	h2 {
+		font-size:1.8em;
+		margin:0;
+		padding:0;
+		color:darken($lightgrey, 10%);
+	}
+	
+	ul {
+		text-align:center;
+		display:inline-block;
+		margin:20px;
+	}
+
+	li {
+		margin:0;
+		padding:0;
+		float:left;
+		
+		
+		a {
+			text-decoration:none;
+			padding:10px 20px;
+			font-size:1.4em;
+			font-weight:$thin;
+			background:$black;
+			color:$white;
+			margin-left:1px;
+						
+			&:hover {
+				background:$orange;
+			} //hover
+		} //a
+
+	} //lo
+
+	li:first-of-type  a{ @include border-radius (20px 0 0 20px); };
+	li:last-of-type  a{ @include border-radius (0 20px 20px 0);};
+
+	@include clearfix;
+}

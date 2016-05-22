@@ -1,0 +1,113 @@
+// ---------------------
+// Gallery Caption
+// ---------------------
+	
+	.caption {
+		@include container(100%);
+		margin:0;
+		padding:0;
+		background:$black;
+		border-top:1px dotted lighten($black, 10%);		
+		p {
+			margin:0;
+			padding:0;
+			padding:5px 0;
+			font-weight:$thin;
+			font-size:.8em;
+			font-style:italic;
+			color:darken($lightgrey, 20%);
+			opacity:.8;
+		} //p
+	} //caption
+
+
+// ---------------------
+// Gallery
+// ---------------------
+.gallery {
+	background-color: $black; 
+	width:100%;
+	margin:0;
+	padding:20px;
+	padding-bottom:10px;
+	margin-top:10px;
+	
+	// BREAKPOINT
+	@include breakpoint(max-width $narrow) {
+		padding:10px;
+		padding-top:30px;
+	}
+	
+	ul {
+
+		text-align:center;
+		display:inline-block;
+	} //ul
+	
+	li {
+		float:left;
+		color:white;
+		font-size:14px;
+		font-weight:$extrathin;
+		margin-left:20px;
+		color:#999;
+		opacity:0.7;
+		cursor:pointer;
+		
+		// BREAKPOINT
+			@include breakpoint(max-width $extrawide) {
+				margin-top:5px;
+				margin-bottom:10px;
+				margin-left:7px;
+				margin-right:7px;
+			}
+		// BREAKPOINT
+		
+		&:hover {
+			opacity:1;
+		}
+		
+		.gallery--img {
+			width:70px;
+			height:50px;
+		} //gallery--img
+		
+		span {
+			@extend .circle;
+		} //span
+	} //li
+	
+
+	@include clearfix;
+} //gallery
+
+
+
+// ---------------------
+// Gallery Icon Loop - I could do this using img tag inside markup, I just to want to experiment with the sass loop
+// ---------------------
+$gallery-icons: url('../img/web-icon-tools/github.svg'), 
+				url('../img/web-icon-tools/html5.svg'), 
+				url('../img/web-icon-tools/css3.svg'),  
+				url('../img/web-icon-tools/js.svg'),  
+				url('../img/web-icon-tools/jquery.svg'), 
+				url('../img/web-icon-tools/php.svg'),  
+				url('../img/web-icon-tools/gulp.svg'),
+				url('../img/web-icon-tools/sass.svg'),
+				url('../img/web-icon-tools/npm.svg'),
+				url('../img/web-icon-tools/wordpress.svg'),
+				url('../img/web-icon-tools/mysql.svg'),
+				url('../img/web-icon-tools/angularjs.svg'),
+				url('../img/web-icon-tools/bootstrap.svg'),
+				url('../img/ios-icon-tools/swift.svg'),
+				url('../img/ios-icon-tools/xcode.svg');
+
+@for $item from 1 through length($gallery-icons) {
+
+	.gallery ul li:nth-child(#{$item}) .gallery--img {
+		background:nth($gallery-icons, $item) no-repeat;
+		background-position:center center;
+	}
+}
+
+

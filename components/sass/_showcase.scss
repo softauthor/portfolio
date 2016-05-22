@@ -1,54 +1,50 @@
 // --------------------------------
-// INHERITANCE
-// --------------------------------
-
-// --------------------------------
 // MIXINS
 // --------------------------------
-@mixin showcaseimg( $img, $susyspan) {
+@mixin showcaseimgview($height, $susyspan, $position, $backgroundsize:100%) {
+	
 	@include span($susyspan);
-	background:$img no-repeat;
-	background-size:100%;
-	background-position: 0 60px;
+	background-position: $position;
+	background-size: $backgroundsize;
+	height:$height;
 }
+
+@mixin showcaseinfoview($susyspan, $height) {
+	@include span($susyspan);
+	height:$height;
+}
+
 
 // --------------------------------
 // SHOWCASE BLOCK
 // --------------------------------
 .showcase {
-	
-	height:600px;
-	display:block;
-	
-	section {
+	// breakpoint 
+	@include breakpoint(max-width $small) { padding:10px; }
 
-		width:100%;
-		max-width:1600px;
-		margin:0 auto;
+	section { 
 		// susy 
-		@include container;
-		
-		
-		.showcase__img {
-			height:600px;
-		} //.showcase-img
+		@include container(1600px);
+		margin:0 auto;
 
+		// right block
 		.showcase__info {
 			display:table;
-			height:600px;
-		
+			
+			// inner right block
 			&__block {
+				text-align:center;
 				display:inline-block;
 				display:table-cell;
 				vertical-align:middle;
+				padding:10px;
+				
+				p {line-height:30px;} //p
+				h3 {line-height:35px;} //h3
 			} //.showcase__info__block
-			
 		} //.showcase__info
-		
 	} //section
-
 	@include clearfix;
-
 } //.showcase
 
 
@@ -56,66 +52,161 @@
 // --------------------------------
 // SHOWCASE BLOCK MODIFIER
 // --------------------------------
+
+// cholapalace -------------------
 .showcase--cp {
 	background: $cp-bg;
 	
 	.showcase__img {
-		@include showcaseimg( url('../img/cp-view.png'), 7);
-	}
+		background: url('../img/cp-view.png') no-repeat;
+		// breakpoint 
+		@include breakpoint(max-width $small) { @include showcaseimgview( 250px, 12, center 0px, 100%);}
+		@include breakpoint($small $medium) {@include showcaseimgview(400px, 7, right 20px, cover);}
+		@include breakpoint($medium $wide) {@include showcaseimgview(450px, 7, right 20px, cover);}
+		@include breakpoint($wide $extrawide) {@include showcaseimgview( 500px, 6, right 20px, cover);}
+		//default 
+		@include showcaseimgview( 600px, 7, right 60px, 100%);
+	} //showcase_-img
 
 	.showcase__info {
-		@include span(5 last);
-		
-		h2 {
-			color:rgba($cpchocolate, 0.5);
-		}
+		@include breakpoint(max-width $small) { @include showcaseinfoview(12, 250px);}
+		@include breakpoint($small $medium) {@include showcaseinfoview(5 last, 400px);}
+		@include breakpoint($medium $wide) {@include showcaseinfoview(5 last, 450px);}
+		@include breakpoint($wide $extrawide) {@include showcaseinfoview(6 last,500px );}
 
-		h3 {
-			color:rgba($cpchocolate, 0.9);
-		}
+		//default 
+		@include showcaseinfoview( 5 last, 600px);
+		h2 { color:rgba($cpchocolate, 0.3); }
+		h3 { color:rgba($cpchocolate, 0.9);}
+		p { color:rgba($cpchocolate, 0.9);}
+	} //showcaseinfo
 
-		p {
-			color:rgba($cpchocolate, 0.9);
-		}
-	}
-
-	small {
-		background:rgba($cpchocolate, 0.2);
-	}
-
-	
+	small {background:rgba($cpchocolate, 0.2);} //small
 }
 
 
-
+// softauthor -------------------
 .showcase--sa {
-	background:$sa-bg;
-	
+	background: $sa-bg;
 	.showcase__img {
-		@include showcaseimg( url('../img/sa-view.png'), 7 last);
-	}
+		background: url('../img/sa-view.png') no-repeat;
+		// breakpoint 
+		@include breakpoint(max-width $small) { @include showcaseimgview( 250px, 12, center 0px, 100%);}
+		@include breakpoint($small $medium) {@include showcaseimgview(400px, 7, right 20px, cover);}
+		@include breakpoint($medium $wide) {@include showcaseimgview(450px, 7, right 20px, cover);}
+		@include breakpoint($wide $extrawide) {@include showcaseimgview( 500px, 6, right 20px, cover);}
+		//default 
+		@include showcaseimgview( 600px, 7, right 60px, 100%);
+
+	} //showcase_-img
 
 	.showcase__info {
-		@include span(5 last);
-		
-		h2 {
-			color:rgba($sabeige, .8);
-		}
+		@include breakpoint(max-width $small) { @include showcaseinfoview(12, 250px);}
+		@include breakpoint($small $medium) {@include showcaseinfoview(5 last, 400px);}
+		@include breakpoint($medium $wide) {@include showcaseinfoview(5 last, 450px);}
+		@include breakpoint($wide $extrawide) {@include showcaseinfoview(6 last,500px );}
+		//default 
+		@include showcaseinfoview( 5 last, 600px);
+		h2 {color:darken($sagreen, 20%)}
+		h3 {color:darken($sagreen, 40%);}
+		p {color:darken($sagreen, 40%);}
+	} //showcaseinfo
 
-		h3 {
-			color:darken($sagreen, 40%);
-		}
-
-		p {
-			color:darken($sagreen, 40%);
-		}
-	}
-
-	small {
-		background:rgba($cpchocolate, 0.2);
-	}
+	small {background:rgba($cpchocolate, 0.2);} //small
 }
 
 
 
+// samobile -------------------
+.showcase--samobile {
+    background:$samobile-bg;
+	.showcase__img {
+		background: url('../img/samobile-view.jpg') no-repeat;
+		// breakpoint 
+		@include breakpoint(max-width $small) { @include showcaseimgview( 250px, 12, center 0px, 100%);}
+		@include breakpoint($small $medium) {@include showcaseimgview(400px, 7, right 20px, cover);}
+		@include breakpoint($medium $wide) {@include showcaseimgview(450px, 7, right 20px, cover);}
+		@include breakpoint($wide $extrawide) {@include showcaseimgview( 500px, 6, right 20px, cover);}
+		//default 
+		@include showcaseimgview( 600px, 7, right 85px, 100%);
+
+	} //showcase_-img
+
+	.showcase__info {
+		@include breakpoint(max-width $small) { @include showcaseinfoview(12, 250px);}
+		@include breakpoint($small $medium) {@include showcaseinfoview(5 last, 400px);}
+		@include breakpoint($medium $wide) {@include showcaseinfoview(5 last, 450px);}
+		@include breakpoint($wide $extrawide) {@include showcaseinfoview(6 last,500px );}
+		//default 
+		@include showcaseinfoview( 5 last, 600px);
+		h2 { color:darken($samobile-bg, 25%); }
+		h3 { color:darken($samobile-bg, 30%);}
+		p { color:darken($samobile-bg, 30%);}
+	} //showcaseinfo
+
+	small {background:lighten($samobile-bg, 10%);} //small
+}
+
+
+// bulletship -------------------
+.showcase--bs {
+	background:$bsred;
+	.showcase__img {
+		background: url('../img/bs-view.png') no-repeat;
+		// breakpoint 
+		@include breakpoint(max-width $small) { @include showcaseimgview( 250px, 12, center 0px, 100%);}
+		@include breakpoint($small $medium) {@include showcaseimgview(400px, 7 last, left 20px, cover);}
+		@include breakpoint($medium $wide) {@include showcaseimgview(450px, 7 last, left 20px, cover);}
+		@include breakpoint($wide $extrawide) {@include showcaseimgview( 500px, 6 last, left 20px, cover);}
+		//default 
+		@include showcaseimgview( 600px, 7 last, left 60px, 100%);
+	} //showcase_-img
+
+	.showcase__info { 
+		@include breakpoint(max-width $small) { @include showcaseinfoview(12, 250px);}
+		@include breakpoint($small $medium) {@include showcaseinfoview(5 , 400px);}
+		@include breakpoint($medium $wide) {@include showcaseinfoview(5 , 450px);}
+		@include breakpoint($wide $extrawide) {@include showcaseinfoview(6,500px );}
+		//default 
+		@include showcaseinfoview( 5, 600px);
+		h2 { color:darken($bsred, 25%); }
+		h3 { color:lighten($bsred, 20%);}
+		p { color:lighten($bsred, 20%);}
+	} //showcaseinfo
+
+	small {background:darken($bsred, 25%);} //small
+}
+
+
+// portfolio -------------------
+.showcase--pf {
+	background:$black;
+    // @include background(linear-gradient(top, darken($bs-bg, 20%), $bs-bg));
+	.showcase__img {
+		background: url('../img/pf-view.png') no-repeat;
+		// breakpoint 
+		@include breakpoint(max-width $small) { @include showcaseimgview( 250px, 12, center 0px, 100%);}
+		@include breakpoint($small $medium) {@include showcaseimgview(400px, 7 last, left 20px, cover);}
+		@include breakpoint($medium $wide) {@include showcaseimgview(450px,7 last, left 20px, cover);}
+		@include breakpoint($wide $extrawide) {@include showcaseimgview( 500px, 6 last, left 20px, cover);}
+		//default 
+		@include showcaseimgview( 600px, 7 last, left 60px, 100%);
+
+	} //showcase_-img
+
+	.showcase__info {
+		@include breakpoint(max-width $small) { @include showcaseinfoview(12, 250px);}
+		@include breakpoint($small $medium) {@include showcaseinfoview(5 , 400px);}
+		@include breakpoint($medium $wide) {@include showcaseinfoview(5 , 450px);}
+		@include breakpoint($wide $extrawide) {@include showcaseinfoview(6 ,500px );}
+
+		//default 
+		@include showcaseinfoview( 5 , 600px);
+		h2 { color:darken($lightgrey, 25%); }
+		h3 { color:darken($lightgrey, 0%);}
+		p { color:darken($lightgrey, 0%);}
+	} //showcaseinfo
+
+	small {background:darken($black, 30%);} //small
+}
 

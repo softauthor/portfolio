@@ -1,0 +1,33 @@
+.header {
+	width:100%;
+	padding:30px 10px;
+	background-color:$white;
+	border-bottom:1px dotted $lightgrey;
+	 
+	h2 {
+		font-size:1.8em;
+		margin:0;
+		padding:0;
+		color:darken($lightgrey, 10%);
+		margin-top:30px;
+	}
+
+	button {
+		margin:0;
+	}
+
+	i {
+		color:darken($lightgrey, 30%);
+		color:$lightgrey;
+
+	}
+
+	.rt-image {
+		margin:0 auto;
+		max-width:160px; 
+		
+	
+	}
+
+	@include clearfix;
+}

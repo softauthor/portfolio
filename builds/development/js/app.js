@@ -1,12 +1,46 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-$ = require('jquery')
-// $('body > h1').html("FARA"); 
-console.log("navigation bar");
+$ = require('jquery');
 
-console.log("bannerABC1");
-console.log("body");
+// --------------------------------------------------------------------
+// About Button Slide up and Down
+// --------------------------------------------------------------------
+$('.btn-about').on('click', animateDiv);
+
+function animateDiv(e) {		
+	$('.about').slideToggle();
+	$('.btn-about').toggleClass('rotate rotate-reset');
+}
+ 
+
+// --------------------------------------------------------------------
+// SCROLL and Fixed Header
+// --------------------------------------------------------------------
+
+// Cache selectors outside callback for performance. 
+   var $window = $(window),
+       $stickyEl = $('nav'),
+       elTop = $stickyEl.offset().top;
+
+   $window.scroll(function() {
+
+   	if($window.scrollTop() > elTop) {
+        $stickyEl.addClass('sticky' );
+   	} else {
+   		 $stickyEl.removeClass('sticky' );
+   	}
+
+    });
 
 
+// --------------------------------------------------------------------
+// NAV 
+// --------------------------------------------------------------------
+
+$('nav').find('li').on('click', showWorks);
+
+function showWorks(e) {
+	console.log();
+}
 },{"jquery":2}],2:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.2.3

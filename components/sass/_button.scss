@@ -15,26 +15,48 @@
 	cursor:pointer;
 	font-weight:$thin;
 	margin-right:10px;
-	@include border-radius(10px);
 }
 
+.btn-circle {
+	@include border-radius(50%);
+	background:$black;
+	height:50px;
+	width:50px;
+}
 
-
+.btn-rounded {
+	@include border-radius(10px);
+}
 .btn-cholapalace {
 	background: $cpred; 
-	// border-color:darken($cp-bg, 20%);
 	color:lighten($cp-bg, 20%);
 	border-bottom:2px solid darken($cpred, 20%);
 }
 
 .btn-softauthor {
 	background: darken($sagreen, 30%);; 
-	// border-color:darken($cp-bg, 20%);
 	color:rgba(white, .8);
 	border-bottom:2px solid darken($sagreen, 40%);
-	
 }
 
+.btn-bulletship {
+	background: darken($bs-bg, 20%); 
+	color:lighten($bs-bg, 20%);
+	border-bottom:2px solid darken($bs-bg, 30%);
+}
+
+
+.btn-samobile {
+	background: darken($samobile-bg, 30%); 
+	color:lighten($samobile-bg, 20%);
+	border-bottom:2px solid darken($samobile-bg, 40%);
+}
+
+.btn-portfolio {
+	background: darken($lightgrey, 40%);; 
+	color:lighten($lightgrey, 60%);
+	border-bottom:3px solid darken($lightgrey, 50%);
+}
 
 .btn:hover {
 	opacity:0.8;

@@ -1,3 +1,8 @@
+
+// ---------------------
+// Clear Floats
+// ---------------------
+
 @mixin clearfix {
 	&:before,
 	&:after {
@@ -7,4 +12,41 @@
 	&:after {
 		clear:both;
 	} //after
+}
+
+
+// ---------------------
+// Button Rotations
+// ---------------------
+.rotate {
+    transform: rotate(-180deg);
+    /*transform: rotate(180deg);*/
+    transition: .3s;
+}
+.rotate-reset {
+    transform: rotate(0deg);
+    transition: .3s;
+}
+
+// ---------------------
+// Circle on the Gallery green or blue
+// ---------------------
+.circle {
+	width:10px;
+	height:10px;
+	display:inline-block;
+	text-align:center;
+	margin-right:3px;
+	@include border-radius(50%);
+}
+
+// ---------------------
+// Change skin on the circle
+// ---------------------
+.basic {
+	background:$green;
+}
+
+.intermediate {
+	background:$blue;
 }
